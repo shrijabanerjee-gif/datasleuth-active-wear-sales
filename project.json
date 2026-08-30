@@ -1,0 +1,22 @@
+{
+  "project_name": "active-wear-sales",
+  "display_name": "Active Wear Sales",
+  "ingestion_source": "Shopify API",
+  "raw_table": "raw_shopify_orders",
+  "curated_table": "curated_daily_revenue",
+  "dashboard_name": "Sales Performance Dashboard",
+  "scenario": "schema_drift",
+  "pipeline": [
+    "shopify_api",
+    "raw_sql",
+    "curated_sql",
+    "dashboard"
+  ],
+  "pipeline_status": "FAILED",
+  "failed_step": "curated_sql_layer",
+  "error_log": "Unrecognized name: total_price in raw_shopify_orders at line 4",
+  "sql_file_path": "mock_projects/active-wear-sales/curated/curated_daily_revenue.sql",
+  "historical_fix": "Shopify renamed total_price to order_total_usd. Update the curated SQL alias/reference.",
+  "expected_resolution": "DRAFT_PR",
+  "human_engineer": "@DataEngTeam"
+}
